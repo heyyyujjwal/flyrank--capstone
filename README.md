@@ -87,6 +87,8 @@ Ensure the following tools are installed on your system:
   - Added repository license (MIT).
   - Configured comprehensive `.gitignore` for Node.js, secrets, and environment artifacts.
   - Defined developer instructions and AI interaction guidelines in `CLAUDE.md`.
+
+  Preview deployment test for FE-04.
   - Established project documentation and setup instructions in `README.md`.
 - **Next Steps**:
   - Complete the initial internship assignment review and validation.
