@@ -1,0 +1,203 @@
+/* Base Reset and Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --border-color: #9ca3af;
+  --primary-color: #1d4ed8;
+  --primary-hover: #1e40af;
+  --focus-ring: #2563eb;
+  --danger-color: #b91c1c;
+  --error-bg: #fef2f2;
+  --success-bg: #ecfdf5;
+  --success-border: #059669;
+  --success-text: #065f46;
+  --radius: 6px;
+  --transition: 0.15s ease-in-out;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+}
+
+/* Card Container */
+.settings-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+/* Header */
+.settings-header {
+  margin-bottom: 1.5rem;
+}
+
+.settings-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.settings-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* Status Alert Message */
+.status-message {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-message[hidden] {
+  display: none;
+}
+
+.status-message.success {
+  background-color: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-text);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text-main);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background-color: #ffffff;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+/* Focus Indicators */
+.form-group input[type="text"]:focus-visible,
+.form-group input[type="email"]:focus-visible,
+.btn:focus-visible,
+.checkbox-group input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Error States */
+.form-group input.invalid {
+  border-color: var(--danger-color);
+  background-color: var(--error-bg);
+}
+
+.error-message {
+  font-size: 0.8125rem;
+  color: var(--danger-color);
+  font-weight: 500;
+  margin-top: 0.35rem;
+  min-height: 1.25rem;
+}
+
+/* Checkbox */
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.625rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  font-size: 0.925rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem;
+    align-items: flex-start;
+  }
+
+  .settings-card {
+    padding: 1.25rem;
+    box-shadow: none;
+    border: none;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
